@@ -4,7 +4,7 @@ services:
   prometheus:
     build:
       context: ../
-      dockerfile: ./docker/prometheus/dockerfile
+      dockerfile: docker/prometheus/dockerfile
     container_name: "prometheus"
     hostname: "prometheus"
     ports:
@@ -19,7 +19,7 @@ services:
   grafana:
     build:
       context: ../
-      dockerfile: ./docker/grafana/dockerfile
+      dockerfile: docker/grafana/dockerfile
     image: grafana/grafana
     container_name: "grafana"
     hostname: "grafana"
@@ -74,8 +74,8 @@ services:
   axonserver-enterprise-1:
     image: axonserver-enterprise:4.5.1
     build:
-      context: ../
-      dockerfile: ./docker/axon-server/dockerfile
+      context: ./axon-server
+      dockerfile: dockerfile
     hostname: axonserver-enterprise-1
     environment:
       - AXONIQ_AXONSERVER_CLUSTERTEMPLATE_PATH=/axonserver/cluster-template.yml
@@ -98,8 +98,8 @@ services:
   axonserver-enterprise-2:
     image: axonserver-enterprise:4.5.1
     build:
-      context: ../
-      dockerfile: ./docker/axon-server/dockerfile
+      context: ./axon-server
+      dockerfile: dockerfile
     hostname: axonserver-enterprise-2
     environment:
       - AXONIQ_AXONSERVER_CLUSTERTEMPLATE_PATH=/axonserver/cluster-template.yml
@@ -122,8 +122,8 @@ services:
   axonserver-enterprise-3:
     image: axonserver-enterprise:4.5.1
     build:
-      context: ../
-      dockerfile: ./docker/axon-server/dockerfile
+      context: ./axon-server
+      dockerfile: dockerfile
     hostname: axonserver-enterprise-3
     environment:
       - AXONIQ_AXONSERVER_CLUSTERTEMPLATE_PATH=/axonserver/cluster-template.yml
